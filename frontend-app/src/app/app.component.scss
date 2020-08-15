@@ -1,0 +1,14 @@
+agm-map {
+    height: 90%;
+}
+.example-form {
+    display: flex;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    background: steelblue;
+    color: white;
+    .example-full-width {
+        margin: 1%;
+    }
+}

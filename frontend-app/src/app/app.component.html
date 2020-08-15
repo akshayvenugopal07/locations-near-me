@@ -1,0 +1,32 @@
+<div class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Latitude</mat-label>
+    <input matInput placeholder="12" [(ngModel)]="lat">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Longtitude</mat-label>
+    <input matInput placeholder="13" [(ngModel)]="lng">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Range</mat-label>
+    <input matInput placeholder="In KM" [(ngModel)]="range">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="getDataNearby()">Find Locations Near Me</button>
+
+</div>
+
+<agm-map>
+
+  <agm-marker *ngFor="let m of allLocations; let i = index" [latitude]="m.latitude" [longitude]="m.longitude"
+    [label]="m.name">
+  </agm-marker>
+
+  <agm-marker *ngFor="let m of nearMe; let i = index" [latitude]="m.latitude" [longitude]="m.longitude" [iconUrl]="path"
+    [label]="m.name">
+  </agm-marker>
+
+</agm-map>
