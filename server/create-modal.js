@@ -13,27 +13,15 @@ const createModals = function () {
 
         if (canRefreshService) {
 
-            const locationCount = 100; //no of locations needed
-            const distanceLimit = 400000; //in meters
+            const locationCount = 500; //no of locations needed
+            const distanceLimit = 1500000; //in meters
 
             // add any center point and define distance limit and no of points to create locations
-            const centerKochi = { latitude: 10.033767, longitude: 76.402485 }; // Kochi
-            const centerTrichur = { latitude: 10.570847, longitude: 76.361450 }; // thrissur
-            const centerKozhikode = { latitude: 11.345411, longitude: 75.949964 }; // kozhikode
-            const centerKollam = { latitude: 8.992922, longitude: 76.825522 }; // kollam
-            const centerTvm = { latitude: 8.597995, longitude: 77.080438 }; // tvm
+            const center = { latitude: 18.812718, longitude: 20.253928 };
 
-            const randomLocationsKochi = generateMapPoints(centerKochi, distanceLimit, locationCount);
-            const randomLocationsTrichur = generateMapPoints(centerTrichur, distanceLimit, locationCount);
-            const randomLocationKozhikode = generateMapPoints(centerKozhikode, distanceLimit, locationCount);
-            const randomLocationsKollam = generateMapPoints(centerKollam, distanceLimit, locationCount);
-            const randomLocationsTvm = generateMapPoints(centerTvm, distanceLimit, locationCount);
+            const randomLocations = generateMapPoints(center, distanceLimit, locationCount);
 
-            modal.locationModal.bulkCreate(randomLocationsKochi);
-            modal.locationModal.bulkCreate(randomLocationsTrichur);
-            modal.locationModal.bulkCreate(randomLocationKozhikode);
-            modal.locationModal.bulkCreate(randomLocationsKollam);
-            modal.locationModal.bulkCreate(randomLocationsTvm);
+            modal.locationModal.bulkCreate(randomLocations);
         }
     });
 }
